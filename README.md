@@ -1,5 +1,15 @@
 # React Admin Template
 
+### Preview
+
+![login](src/assets/images/login.PNG)
+![sign](src/assets/images/sign.PNG)
+![home](src/assets/images/home.PNG)
+![site](src/assets/images/site.PNG)
+![profile](src/assets/images/profile.PNG)
+![record](src/assets/images/record.PNG)
+![contact](src/assets/images/contact.PNG)
+
 ### Installation
 
 ```bash
