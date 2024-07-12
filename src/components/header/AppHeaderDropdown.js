@@ -23,7 +23,6 @@ import Swal from 'sweetalert2'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { logout } from '../../redux/authSlice'
-
 import avatar1 from './../../assets/images/avatars/1.jpg'
 
 const AppHeaderDropdown = () => {

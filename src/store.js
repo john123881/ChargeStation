@@ -17,9 +17,8 @@ const changeState = (state = initialState, { type, ...rest }) => {
 }
 
 const rootReducer = combineReducers({
-  app: changeState, // 將 changeState reducer 命名為 app
+  app: changeState, 
   auth: authReducer,
-  // 如果有其他的 reducer，可以在這裡添加
 })
 
 const store = createStore(rootReducer)

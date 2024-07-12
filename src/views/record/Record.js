@@ -1,63 +1,25 @@
 import React from 'react'
 
 import {
-  CAvatar,
-  CButton,
-  CButtonGroup,
   CCard,
   CCardBody,
   CCardFooter,
   CCardHeader,
   CCol,
-  CProgress,
   CRow,
-  CSpinner,
-  CTable,
-  CTableBody,
-  CTableDataCell,
-  CTableHead,
-  CTableHeaderCell,
-  CTableRow,
+  CPagination,
+  CPaginationItem,
   CCardImage,
   CCardTitle,
   CCardText,
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
-import {
-  cibCcAmex,
-  cibCcApplePay,
-  cibCcMastercard,
-  cibCcPaypal,
-  cibCcStripe,
-  cibCcVisa,
-  cibGoogle,
-  cibFacebook,
-  cibLinkedin,
-  cifBr,
-  cifEs,
-  cifFr,
-  cifIn,
-  cifPl,
-  cifUs,
-  cibTwitter,
-  cilCloudDownload,
-  cilPeople,
-  cilUser,
-  cilUserFemale,
-} from '@coreui/icons'
+import { cilUser } from '@coreui/icons'
 
 import park1 from 'src/assets/images/park1.jpg'
 import park2 from 'src/assets/images/park2.jpg'
 
-const Favorite = () => {
-  const userInfo = [
-    { title: 'Uername', value: 'Alice' },
-    { title: 'Email', value: 'XXX@mail.com' },
-    { title: 'Car Model', value: 'Tesla' },
-    { title: 'Charging Times', value: 10 },
-    { title: 'Balance', value: 1000 + ' NTD' },
-  ]
-
+const Record = () => {
   return (
     <>
       <CRow>
@@ -65,32 +27,6 @@ const Favorite = () => {
           <CCard className="mb-4">
             <CCardHeader>Favorite</CCardHeader>
             <CCardBody>
-              {/* <CRow>
-                <CCol xs={12} md={6} xl={6}>
-                  <CRow className="d-flex  justify-content-center mt-5">
-                    <CCardImage orientation="top" src={park1} />
-                  </CRow>
-                </CCol>
-                <CCol
-                  xs={12}
-                  md={6}
-                  xl={6}
-                  className="d-flex row justify-content-center align-item-center mt-5"
-                >
-                  {userInfo.map((item, index) => (
-                    <CRow key={index} className="mb-3">
-                      <CCol xs={6} md={4} className="text-center text-md-start">
-                        {item.title}:
-                      </CCol>
-                      <CCol xs={6} md={8}>
-                        {item.value}
-                      </CCol>
-                    </CRow>
-                  ))}
-                </CCol>
-              </CRow>
-
-              <br /> */}
               <CCard className="mb-3 w-100">
                 <CRow className="g-0">
                   <CCol md={4}>
@@ -149,6 +85,19 @@ const Favorite = () => {
                   </CCol>
                 </CRow>
               </CCard>{' '}
+              <div className="d-flex justify-content-center">
+                <CPagination>
+                  <CPaginationItem aria-label="Previous" disabled>
+                    <span aria-hidden="true">&laquo;</span>
+                  </CPaginationItem>
+                  <CPaginationItem active>1</CPaginationItem>
+                  <CPaginationItem>2</CPaginationItem>
+                  <CPaginationItem>3</CPaginationItem>
+                  <CPaginationItem aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                  </CPaginationItem>
+                </CPagination>
+              </div>
             </CCardBody>
           </CCard>
         </CCol>
@@ -157,4 +106,4 @@ const Favorite = () => {
   )
 }
 
-export default Favorite
+export default Record
