@@ -1,7 +1,9 @@
 import React from 'react'
 
-const Dashboard = React.lazy(() => import('./views/dashboard/Dashboard'))
+const Home = React.lazy(() => import('./views/home/Home'))
 const User = React.lazy(() => import('./views/user/User'))
+const Site = React.lazy(() => import('./views/site/Site'))
+const Favorite = React.lazy(() => import('./views/favorite/Favorite'))
 
 // Base
 const Accordion = React.lazy(() => import('./views/base/accordion/Accordion'))
@@ -43,11 +45,15 @@ const Modals = React.lazy(() => import('./views/notifications/modals/Modals'))
 const Toasts = React.lazy(() => import('./views/notifications/toasts/Toasts'))
 
 const Widgets = React.lazy(() => import('./views/widgets/Widgets'))
+const Contact = React.lazy(() => import('./views/contact/Contact'))
 
 const routes = [
-  { path: '/', exact: true, name: 'Home' },
-  { path: '/dashboard', name: 'Dashboard', element: Dashboard },
+  { path: '/', exact: true, name: 'Home', element: Home },
   { path: '/user', name: 'User', element: User },
+  { path: '/site', name: 'Site', element: Site },
+  { path: '/favorite', name: 'Favorite', element: Favorite },
+  { path: '/contact', name: 'Contact', element: Contact },
+
   { path: '/base', name: 'Base', element: Cards, exact: true },
   { path: '/base/accordion', name: 'Accordion', element: Accordion },
   { path: '/base/breadcrumbs', name: 'Breadcrumbs', element: Breadcrumbs },
@@ -84,6 +90,7 @@ const routes = [
   { path: '/notifications/badges', name: 'Badges', element: Badges },
   { path: '/notifications/modals', name: 'Modals', element: Modals },
   { path: '/notifications/toasts', name: 'Toasts', element: Toasts },
+
   { path: '/widgets', name: 'Widgets', element: Widgets },
 ]
 

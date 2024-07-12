@@ -8,7 +8,7 @@ import routes from '../routes'
 const AppContent = () => {
   return (
     <CContainer className="px-4" lg>
-      <Suspense fallback={<CSpinner color="primary" />}>
+      <Suspense fallback={<CSpinner color="info" />}>
         <Routes>
           {routes.map((route, idx) => {
             return (

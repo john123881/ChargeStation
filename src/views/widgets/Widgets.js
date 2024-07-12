@@ -744,7 +744,7 @@ const Widgets = () => {
           <CCardGroup className="mb-4">
             <CWidgetStatsC
               icon={<CIcon icon={cilPeople} height={36} />}
-              value="87.500"
+              value="87.50"
               title="Visitors"
               progress={{ color: 'info', value: 75 }}
             />

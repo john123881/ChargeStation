@@ -15,7 +15,6 @@ import { AppSidebarNav } from './AppSidebarNav'
 
 import { logo } from 'src/assets/brand/logo'
 
-
 // sidebar nav config
 import navigation from '../_nav'
 

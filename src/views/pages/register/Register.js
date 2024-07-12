@@ -40,7 +40,6 @@ const Register = () => {
     const form = event.currentTarget
 
     if (password !== repeatPassword) {
-
       event.stopPropagation()
       // Handle mismatch error (you can set an error state here if needed)
       Swal.fire({
@@ -52,7 +51,6 @@ const Register = () => {
     }
 
     if (form.checkValidity() === false) {
-
       event.stopPropagation()
     } else {
       // Handle form submission

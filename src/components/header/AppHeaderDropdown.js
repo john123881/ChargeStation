@@ -2,7 +2,6 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import {
   CAvatar,
-  CBadge,
   CDropdown,
   CDropdownDivider,
   CDropdownHeader,
@@ -12,14 +11,11 @@ import {
 } from '@coreui/react'
 import {
   cilAccountLogout,
-  cilBell,
   cilCreditCard,
-  cilCommentSquare,
-  cilEnvelopeOpen,
-  cilFile,
-  cilLockLocked,
   cilSettings,
-  cilTask,
+  cilFolderOpen,
+  cilCash,
+  cilTransfer,
   cilUser,
 } from '@coreui/icons'
 import CIcon from '@coreui/icons-react'
@@ -28,7 +24,7 @@ import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { logout } from '../../redux/authSlice'
 
-import avatar8 from './../../assets/images/avatars/8.jpg'
+import avatar1 from './../../assets/images/avatars/1.jpg'
 
 const AppHeaderDropdown = () => {
   const dispatch = useDispatch()
@@ -58,7 +54,7 @@ const AppHeaderDropdown = () => {
   return (
     <CDropdown variant="nav-item">
       <CDropdownToggle placement="bottom-end" className="py-0 pe-0" caret={false}>
-        <CAvatar src={avatar8} size="md" />
+        <CAvatar src={avatar1} size="md" />
       </CDropdownToggle>
       <CDropdownMenu className="pt-0" placement="bottom-end">
         <CDropdownHeader className="bg-body-secondary fw-semibold mb-2">Account</CDropdownHeader>
@@ -68,16 +64,24 @@ const AppHeaderDropdown = () => {
           Profile
         </CDropdownItem>
         <CDropdownItem href="#">
+          <CIcon icon={cilCreditCard} className="me-2" />
+          Payment
+        </CDropdownItem>
+        <CDropdownItem href="#">
+          <CIcon icon={cilFolderOpen} className="me-2" />
+          Invoice
+        </CDropdownItem>
+        <CDropdownItem href="#">
+          <CIcon icon={cilCash} className="me-2" />
+          Top-up Records
+        </CDropdownItem>
+        <CDropdownItem href="#">
+          <CIcon icon={cilTransfer} className="me-2" />
+          Transaction Records
+        </CDropdownItem>
+        <CDropdownItem href="#">
           <CIcon icon={cilSettings} className="me-2" />
           Settings
-        </CDropdownItem>
-        <CDropdownItem href="#">
-          <CIcon icon={cilCreditCard} className="me-2" />
-          Payments
-        </CDropdownItem>
-        <CDropdownItem href="#">
-          <CIcon icon={cilFile} className="me-2" />
-          Projects
         </CDropdownItem>
         <CDropdownDivider />
         <CDropdownItem onClick={handleLogout} style={{ cursor: 'pointer', userSelect: 'none' }}>

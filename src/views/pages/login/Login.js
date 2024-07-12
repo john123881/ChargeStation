@@ -38,24 +38,26 @@ const Login = () => {
     }))
   }
 
-  const handleSubmit = (event) => {
+  const handleLogin = (event) => {
     event.preventDefault()
     const form = event.currentTarget
 
     const getStoredFormData = () => {
       const storedFormData = localStorage.getItem('formData')
-      if (!storedFormData) {
+      if (storedFormData === null) {
         Swal.fire({
           icon: 'error',
           title: 'Oops...',
           text: 'It is required to register!',
         })
-        return null
+        return
+      } else {
+        return JSON.parse(storedFormData)
       }
-      return JSON.parse(storedFormData)
     }
 
     const storedData = getStoredFormData()
+
     let usernameDB, passwordDB
     if (storedData) {
       ;({ username: usernameDB, password: passwordDB } = storedData)
@@ -75,21 +77,23 @@ const Login = () => {
       event.stopPropagation()
     } else {
       // Handle form submission
-      localStorage.setItem('formData', JSON.stringify(formData))
-      Swal.fire({
-        position: 'center',
-        title: 'Register Success!',
-        icon: 'success',
-        showConfirmButton: false,
-        timer: 1500,
-      })
-        .then(() => {
-          dispatch(login())
-          navigate('/')
+
+      if (password === passwordDB && username === usernameDB) {
+        Swal.fire({
+          position: 'center',
+          title: 'Login Success!',
+          icon: 'success',
+          showConfirmButton: false,
+          timer: 1500,
         })
-        .catch((error) => {
-          console.error('login error:', error)
-        })
+          .then(() => {
+            dispatch(login())
+            navigate('/')
+          })
+          .catch((error) => {
+            console.error('login error:', error)
+          })
+      }
     }
     setValidated(true)
 
@@ -109,7 +113,7 @@ const Login = () => {
                     className="needs-validation"
                     noValidate
                     validated={validated}
-                    onSubmit={handleSubmit}
+                    onSubmit={handleLogin}
                   >
                     <h1 style={{ userSelect: 'none' }}>Login</h1>
                     <p className="text-body-secondary">Sign In to your account</p>
